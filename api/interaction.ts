@@ -1,4 +1,5 @@
 import { Hono } from 'hono'
+import { handle } from 'hono/vercel'
 import { verifyKey } from 'discord-interactions'
 import { getScoreboard, updateScore } from '../lib/scoreboard'
 
@@ -41,4 +42,4 @@ app.post('/', async (c) => {
   return c.text('OK')
 })
 
-export default app
+export const POST = handle(app)
