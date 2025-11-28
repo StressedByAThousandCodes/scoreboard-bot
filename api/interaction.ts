@@ -2,6 +2,8 @@ import { Hono } from 'hono'
 import { verifyKey } from 'discord-interactions'
 import { getScoreboard, updateScore } from '../lib/scoreboard'
 
+export const runtime = 'edge' 
+
 const app = new Hono()
 
 app.post('/', async (c) => {
